@@ -6,29 +6,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
 use App\Models\User;
+use App\Http\Middleware\agecheck;
 
-Route::get('/', function () {
-    return view('home');
+Route::view("users","users");
+Route::view("home","home");
+Route::view("noaccess","noaccess");
+
+Route::middleware(['ageCheck'])->group(function(){
+    Route::view('users','users');
+    Route::get('/',function(){
+        return view('noaccess ');
+    }); 
 });
-
-Route::get('/home', [UserController::class, 'userHome']);
-Route::get('/about', [UserController::class, 'aboutUser']);
-Route::get('/data', [UserController::class, 'info']);
-Route::get('/admin', [UserController::class, 'admin']);
-
-Route::get('/form', function () {
-    return view('form');
-});
-
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/new',[UserController::class,'viewload']);
-
-
-
-
-Route::view('/login', 'login');
-Route::post('/login', [FormController::class, 'info']);
