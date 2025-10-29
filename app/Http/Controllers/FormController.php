@@ -10,7 +10,7 @@ class FormController extends Controller
     {
         $req->validate([
             'username' => 'required|man:10',
-            'password'=>'required | min:5'
+            'password'=>'required | min:8'
         ]);
 
         return response()->json($req->input());
