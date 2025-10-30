@@ -1,10 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddMember;
 
-// Delete route
-Route::post('/user', [UserController::class, 'start']);
+
+Route::view('upload','add');
+Route::post('upload', [AddMember::class, 'start']);
 
 // View route
-Route::view('/login', 'login');
-Route::view('profile','profile');
