@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\User;
-class UserController
+
+class UserController extends Controller
 {
-    function getData(){
-        return User::all();
+    public function start(Request $request)
+    {
+        return $request->all();  // returns all form data
     }
 }
