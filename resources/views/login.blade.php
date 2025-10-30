@@ -1,5 +1,4 @@
-<form action="/users" method="POST">
-    {{ method_field('DELETE') }}
+<form action="/user" method="POST">
     @csrf
       <!-- Laravel syntax shortcut -->
     

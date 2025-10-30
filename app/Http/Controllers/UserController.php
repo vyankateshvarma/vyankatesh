@@ -8,6 +8,8 @@ class UserController extends Controller
 {
     public function start(Request $request)
     {
-        return $request->all();  // returns all form data
+        $data=$request->all();  // returns all form data
+        $request->session()->put('user',$data['username']);
+        redirect('profile');
     }
 }
