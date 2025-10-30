@@ -9,6 +9,4 @@ use App\Http\Controllers\FormController;
 use App\Models\User;
 use App\Http\Middleware\agecheck;
 
-Route::view("users","users")->middleware('agecheck');
-Route::view("home","home");
-Route::view("noaccess","noaccess");
+Route::get("users",[UserController::class,"start"]);
