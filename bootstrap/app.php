@@ -12,10 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias([
-            'ageCheck' => AgeCheckMiddleware::class,
-        ]);
+   ->withMiddleware(function (Middleware $middleware): void {
+    $middleware->alias([
+        'agecheck' => \App\Http\Middleware\AgeCheckMiddleware::class,
+    ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
