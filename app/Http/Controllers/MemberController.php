@@ -11,4 +11,9 @@ class MemberController extends Controller
     $data = Product::all();
     return view('list',['member'=>$data]);
     }
+    function delete($id){
+        $data=Product::find($id);
+        $data->delete();
+        return redirect('list');
+    }
 }

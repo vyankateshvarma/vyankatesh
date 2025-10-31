@@ -7,6 +7,7 @@
         <td>price</td>
         <td>created_at</td>
         <td>updated at</td>
+        <td>operation</td>
     </tr>
     @foreach($member as $members)
     <tr>
@@ -16,6 +17,7 @@
     <td>{{$members['price']}}</td>
     <td>{{$members['created_at']}}</td>
     <td>{{$members['updated_at']}}</td>
+    <td><a href={{"delete/".$members['id']}}>Delete</a></td>
     </tr>
     @endforeach
 </table>
