@@ -4,6 +4,4 @@ use App\Http\Controllers\MemberController;
 
 
 
-Route::get('list',[MemberController::class,'show']);
-// View route
-Route::get('delete/{id}', [MemberController::class, 'delete']);
+Route::get('list',action: [MemberController::class,'index']);
