@@ -1,9 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AddMember;
+use App\Http\Controllers\MemberController;
 
 
-Route::view('upload','add');
-Route::post('upload', [AddMember::class, 'start']);
 
+Route::get('list',[MemberController::class,'show']);
 // View route
