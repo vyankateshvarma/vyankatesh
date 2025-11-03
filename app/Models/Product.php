@@ -8,7 +8,7 @@
     class Product extends Model
     {
         use HasFactory;
-        public function getCompany(){   
-    return $this->hasOne('App\Models\Company', 'member_id', 'id');
+        public function getCompany(){
+        //
     }
     }
